@@ -22,6 +22,7 @@ import com.aleadin.train.model.CourseViewData;
 import com.aleadin.train.model.DateBarViewData;
 import com.aleadin.train.model.EliteClassViewData;
 import com.aleadin.train.model.EliteCourseViewData;
+import com.aleadin.train.model.OfflineClassDetailViewData;
 import com.aleadin.train.model.OfflineClassSurveyViewData;
 import com.aleadin.train.model.OfflineCourseViewData;
 import com.aleadin.train.model.OnlineCourseViewData;
@@ -303,5 +304,13 @@ public class YLHService {
 	  String Data = JSON.toJSONString(ocdata);
 	  return Data;
   }
-  
+  public String queryOfflineClassData(String classid)
+  {
+	  OfflineClassDetailViewData ocdvd = new OfflineClassDetailViewData();
+	  ocdvd.setPageTitle("线下课堂");
+	  
+	  String Data = JSON.toJSONString(ocdvd);
+	  return Data;
+	  
+  }
 }

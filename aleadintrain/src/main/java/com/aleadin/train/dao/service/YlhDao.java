@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.aleadin.train.dao.vo.ClassDetailVo;
 import com.aleadin.train.dao.vo.ClassSurveyVO;
+import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.SlideVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
 
@@ -46,5 +47,13 @@ public interface YlhDao {
 	 * @return
 	 */
 	List<OfflineClassSurveyVO> queryOfflineClassSurvey(Map<String,Object> params);
+	
+	/**
+	 * 查询线下课程细节
+	 * @param classid
+	 * @return
+	 */
+
+	List<OfflineClassDetailVO> queryOfflineClassDetail(String classid);
 	
 }

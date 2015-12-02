@@ -135,7 +135,7 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
       this.$route = $route;
       this.$location = $location;
       this.$routeParams = $routeParams;
-      $http.get('/careerpreview/offlineclass.json'+$routeParams.offclassid).success(function(data) {
+      $http.get('/careerpreview/offlineclass.json/'+$routeParams.offclassid).success(function(data) {
     	    $scope.data= data;
     	  });
   }]);
