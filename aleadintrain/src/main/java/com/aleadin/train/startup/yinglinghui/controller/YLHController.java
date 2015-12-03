@@ -140,36 +140,67 @@ public class YLHController {
 	@RequestMapping(value="/careerpreview/offlineclass.json/{offclassid}")
 	public  @ResponseBody String offlineClassData(@PathVariable String offclassid) {
 		
-		return "";
+		String JsonData = service.queryOfflineClassData(offclassid);
+		return JsonData;
 	}
 	
-	@RequestMapping(value="/my/accountmgr")
+	@RequestMapping(value="/my/accountmgr.html")
 	public String accountMgr()
 	{
 		return "accountmgr";
 	}
 	
-	@RequestMapping(value="/my/ijionyou")
+	@RequestMapping(value="/my/accountmgr.json")
+	public  @ResponseBody String accountMgrData() {
+		String JsonData = service.queryAccountMgrData();
+		return JsonData;
+	}
+	
+	@RequestMapping(value="/my/ijionyou.html")
 	public String iJionYou()
 	{
 		return "ijionyou";
 	}
 	
-	@RequestMapping(value="/my/becomeelite")
+	@RequestMapping(value="/my/ijionyou.json")
+	public  @ResponseBody String IJionYouData() {
+		String JsonData = service.queryIJionYouData();
+		return JsonData;
+	}
+	
+	@RequestMapping(value="/my/becomeelite.html")
 	public String becomeElite()
 	{
 		return "becomeelite";
 	}
 	
-	@RequestMapping(value="/my/eliteclub")
+	@RequestMapping(value="/my/becomeelite.json")
+	public  @ResponseBody String becomeEliteData() {
+		String JsonData = service.queryBecomeEliteData();
+		return JsonData;
+	}
+	
+	@RequestMapping(value="/my/eliteclub.html")
 	public String eliteClub()
 	{
 		return "eliteclub";
 	}
 	
-	@RequestMapping(value="/my/myorder")
+	@RequestMapping(value="/my/eliteclub.json")
+	public  @ResponseBody String eliteClubData() {
+		String JsonData = service.queryEliteClubData();
+		return JsonData;
+	}
+	
+	@RequestMapping(value="/my/myorder.html")
 	public String myOrder()
 	{
 		return "myorder";
+	}
+	
+	@RequestMapping(value="/my/myorder.json")
+	public  @ResponseBody String myOrderData() {
+		String JsonData = service.queryMyOrderData();
+		return JsonData;
 	}
 }

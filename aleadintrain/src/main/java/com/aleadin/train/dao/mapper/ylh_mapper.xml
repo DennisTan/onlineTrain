@@ -27,4 +27,12 @@
 	select a.ID,a.title,a.introduce,a.startTime,a.thumbnailPath,a.address,a.authorID,b.realName,b.company,b.position from TBL_OFFLINECLASS a, TBL_ACCOUNT b where 1 = 1 and a.authorID = b.ID
 	</select>
 	
+	<select id="queryOfflineClassDetail" resultType="OfflineClassDetailVO">
+	select a.ID,a.title,a.introduce,a.startTime,a.imgPath,a.address,a.authorID,b.realName,b.company,b.position, b.tag1 as authIntroduce1, b.tag2 as authIntroduce2,b.tag3 as authIntroduce3,b.imgPath as authImgPath from TBL_OFFLINECLASS a, TBL_ACCOUNT b where 1 = 1 and a.ID = #{classid} and a.authorID = b.ID
+	</select>
+	
+	<select id="queryRelationOfflineClassSurvey" resultType="OfflineClassSurveyVO">
+	select a.ID,a.title,a.introduce,a.startTime,a.thumbnailPath,a.address,a.authorID,b.realName,b.company,b.position from TBL_OFFLINECLASS a, TBL_ACCOUNT b where 1 = 1 and a.authorID = b.ID and a.ID &lt;&gt; #{classid} LIMIT 2
+	</select>
+	
 </mapper>

@@ -53,7 +53,32 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
             templateUrl: 'careerpreview/careerpreviewofflineclass.html',
             controller: 'OfflineClassCtrl',
             controllerAs: 'offlineclass'
-          });
+          })
+          .when('/my/accountmgr', {
+              templateUrl: 'my/accountmgr.html',
+              controller: 'AccountMgrCtrl',
+              controllerAs: 'accountmgr'
+            })
+            .when('/my/ijionyou', {
+              templateUrl: 'my/ijionyou.html',
+              controller: 'IJionYouCtrl',
+              controllerAs: 'ijionyou'
+            })
+            .when('/my/becomeelite', {
+              templateUrl: 'my/becomeelite.html',
+              controller: 'BecomeEliteCtrl',
+              controllerAs: 'becomeelite'
+            })
+            .when('/my/eliteclub', {
+              templateUrl: 'my/eliteclub.html',
+              controller: 'EliteClubCtrl',
+              controllerAs: 'eliteclub'
+            })
+            .when('/my/myorder', {
+              templateUrl: 'my/myorder.html',
+              controller: 'MyOrderCtrl',
+              controllerAs: 'myorder'
+            });
       
       $locationProvider.html5Mode(true);
   }])
@@ -136,6 +161,51 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
       this.$location = $location;
       this.$routeParams = $routeParams;
       $http.get('/careerpreview/offlineclass.json/'+$routeParams.offclassid).success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('AccountMgrCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/my/accountmgr.json').success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('IJionYouCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/my/ijionyou.json').success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('BecomeEliteCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/my/becomeelite.json').success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('EliteClubCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/my/eliteclub.json').success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('MyOrderCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/my/myorder.json').success(function(data) {
     	    $scope.data= data;
     	  });
   }]);

@@ -1,5 +1,7 @@
 package com.aleadin.train.dao.vo;
 
+import java.util.Date;
+
 public class OfflineClassDetailVO {
 	   
 	    //课程ID
@@ -12,7 +14,7 @@ public class OfflineClassDetailVO {
 		private String introduce;
 		
 		//开课时间
-		private String startTime;
+		private Date startTime;
 		
 		//课程图片
 		private String imgPath;
@@ -69,11 +71,11 @@ public class OfflineClassDetailVO {
 			this.introduce = introduce;
 		}
 
-		public String getStartTime() {
+		public Date getStartTime() {
 			return startTime;
 		}
 
-		public void setStartTime(String startTime) {
+		public void setStartTime(Date startTime) {
 			this.startTime = startTime;
 		}
 

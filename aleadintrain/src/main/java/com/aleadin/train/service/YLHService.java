@@ -15,13 +15,19 @@ import com.aleadin.train.dao.Const.DBConst;
 import com.aleadin.train.dao.service.YlhDao;
 import com.aleadin.train.dao.vo.ClassDetailVo;
 import com.aleadin.train.dao.vo.ClassSurveyVO;
+import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
 import com.aleadin.train.dao.vo.SlideVO;
+import com.aleadin.train.model.AccountMgrViewData;
+import com.aleadin.train.model.BecomeEliteViewData;
 import com.aleadin.train.model.CarouselSlideViewData;
 import com.aleadin.train.model.CourseViewData;
 import com.aleadin.train.model.DateBarViewData;
 import com.aleadin.train.model.EliteClassViewData;
+import com.aleadin.train.model.EliteClubViewData;
 import com.aleadin.train.model.EliteCourseViewData;
+import com.aleadin.train.model.IJionYouViewData;
+import com.aleadin.train.model.MyOrderViewData;
 import com.aleadin.train.model.OfflineClassDetailViewData;
 import com.aleadin.train.model.OfflineClassSurveyViewData;
 import com.aleadin.train.model.OfflineCourseViewData;
@@ -245,6 +251,10 @@ public class YLHService {
 	  return Data;
   }
   
+  /**
+   * 
+   * @return
+   */
   public String queryOnlineCourseData()
   {
 	  OnlineCourseViewData ocdata = new OnlineCourseViewData();
@@ -253,6 +263,10 @@ public class YLHService {
 	  return Data;
   }
   
+  /**
+   * 
+   * @return
+   */
   public String queryOfflineCourseData()
   {
 	  OfflineCourseViewData ocdata = new OfflineCourseViewData();
@@ -304,13 +318,120 @@ public class YLHService {
 	  String Data = JSON.toJSONString(ocdata);
 	  return Data;
   }
+  
+  /**
+   * 
+   * @param classid
+   * @return
+   */
   public String queryOfflineClassData(String classid)
   {
 	  OfflineClassDetailViewData ocdvd = new OfflineClassDetailViewData();
 	  ocdvd.setPageTitle("线下课堂");
-	  
+	  Map<String, Object> params = new HashMap<String, Object>();
+	  params.put("classid", classid);
+	  List<OfflineClassDetailVO> list = ylhDao.queryOfflineClassDetail(params);
+	  if(list.size() != 0)
+	  {
+		  OfflineClassDetailVO detailVO = list.get(0);
+		  ocdvd.setID(detailVO.getID());
+		  ocdvd.setTitle(detailVO.getTitle());
+		  ocdvd.setIntroduce(detailVO.getIntroduce());
+		  ocdvd.setImgPath(detailVO.getImgPath());
+		  ocdvd.setAddress(detailVO.getAddress());
+		  Date starttime = detailVO.getStartTime();
+		  String startTime= "";
+		  if(starttime != null)
+		  {
+			  DateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+			  startTime = format.format(starttime);
+		  }
+		  ocdvd.setStartTime(startTime);
+		  ocdvd.setAuthorID(detailVO.getAuthorID());
+		  ocdvd.setAuthorName(detailVO.getRealName());
+		  ocdvd.setCompany(detailVO.getCompany());
+		  ocdvd.setPosition(detailVO.getPosition());
+		  List<String> authIntroduces =  new ArrayList<String>();
+		  if(detailVO.getAuthIntroduce1() != null && detailVO.getAuthIntroduce1() != "")
+		  {
+			  authIntroduces.add(detailVO.getAuthIntroduce1());
+		  }
+		  if(detailVO.getAuthIntroduce2() != null && detailVO.getAuthIntroduce2() != "")
+		  {
+			  authIntroduces.add(detailVO.getAuthIntroduce2());
+		  }
+		  if(detailVO.getAuthIntroduce3() != null && detailVO.getAuthIntroduce3() != "")
+		  {
+			  authIntroduces.add(detailVO.getAuthIntroduce3());
+		  }
+		  ocdvd.setAuthIntroduces(authIntroduces);
+		  ocdvd.setAuthImgPath(detailVO.getAuthImgPath());
+		  
+	  }
+	  List<OfflineClassSurveyVO> ocslist= ylhDao.queryRelationOfflineClassSurvey(params);
+	  List<OfflineClassSurveyViewData> ocsvdList = new ArrayList<OfflineClassSurveyViewData>();
+	  for (int i = 0; i < ocslist.size(); i++) 
+	  {
+		  OfflineClassSurveyVO ocsvo = ocslist.get(i);
+		  OfflineClassSurveyViewData ocsvd = new OfflineClassSurveyViewData();
+		  ocsvd.setTitle(ocsvo.getTitle());
+		  ocsvd.setIntroduce(ocsvo.getIntroduce());
+		  Date starttime = ocsvo.getStartTime();
+		  String startTime= "";
+		  if(starttime != null)
+		  {
+			  DateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+			  startTime = format.format(starttime);
+		  }
+		  ocsvd.setStartTime(startTime);
+		  ocsvd.setThumbnailPath(ocsvo.getThumbnailPath());
+		  ocsvd.setAddress(ocsvo.getAddress());
+		  ocsvd.setAuthorID(ocsvo.getAuthorID());
+		  ocsvd.setAuthorName(ocsvo.getRealName());
+		  ocsvd.setCompany(ocsvo.getCompany());
+		  ocsvd.setPosition(ocsvo.getPosition());
+		  ocsvd.setLink("/careerpreview/offlineclass/"+ocsvo.getID());
+		  ocsvdList.add(ocsvd);
+	  }	
+	  ocdvd.setRelationCourse(ocsvdList);
 	  String Data = JSON.toJSONString(ocdvd);
 	  return Data;
 	  
   }
+
+public String queryAccountMgrData() {
+	AccountMgrViewData viewData = new AccountMgrViewData();
+	viewData.setPageTitle("账号管理");
+	String Data = JSON.toJSONString(viewData);
+	return Data;
+}
+
+public String queryIJionYouData() {
+	IJionYouViewData viewData = new IJionYouViewData();
+	viewData.setPageTitle("我要入汇");
+	String Data = JSON.toJSONString(viewData);
+	  return Data;
+}
+
+public String queryBecomeEliteData() {
+	BecomeEliteViewData viewData = new BecomeEliteViewData();
+	viewData.setPageTitle("成为精英");
+	String Data = JSON.toJSONString(viewData);
+	  return Data;
+}
+
+public String queryEliteClubData() {
+	EliteClubViewData viewData = new EliteClubViewData();
+	viewData.setPageTitle("精英俱乐部");
+	String Data = JSON.toJSONString(viewData);
+	  return Data;
+}
+
+public String queryMyOrderData() {
+	MyOrderViewData viewData = new MyOrderViewData();
+	viewData.setPageTitle("我的订单");
+	String Data = JSON.toJSONString(viewData);
+	  return Data;
+}
+
 }

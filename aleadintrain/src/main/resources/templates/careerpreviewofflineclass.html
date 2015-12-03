@@ -1,62 +1,70 @@
-
+<div>
     <header class="header bg-primary">
       <div class="page-header">
         <div class="container">
-            <h1 align = "center">面试练习</h1>
+            <h1 align = "center" ng-bind-template="{{data.pageTitle}}"></h1>
         </div>
       </div>
     </header>
-    <div class="container-fluid">
+</div>
+<div class="container-fluid">
       <div class="row" align = "center">
-        <img src="../img/slide1.jpg" class="img-responsive" alt="Responsive image"></img>
+        <img ng-src="{{data.imgPath}}" class="img-responsive" alt="Responsive image"></img>
      </div>
       
       <div class="row">
          <h4>课程名</h4>
-         <span>职场面试葵花宝典（上）</span>
+         <span ng-bind-template="{{data.title}}"></span>
       </div>
       <div class="row">
          <h4>课程介绍</h4>
-         <span>想面试成功不难，具备专业的技能基础知识，再加上合理的面试技巧，就能大大提高面试成功率</span>
+         <span ng-bind-template="{{data.introduce}}"></span>
       </div>
       <div class="row">
-          <p class="text-primary">地点： 广东财经大学</p>
-          <p class="text-primary">时间： 2015-12-23</p>
+          <p class="text-primary" ng-bind-template="讲课地点： {{data.address}}"></p>
+          <p class="text-primary" ng-bind-template="讲课时间： {{data.startTime}}"></p>
       </div>
-
+      <div class="row">
+         <h4>导师介绍</h4>
+         <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img class="media-object img-circle" ng-src="{{data.authImgPath}}" alt="Generic placeholder image"></img>
+              </a>
+            </div>
+            <div class="media-body  media-middle">
+              <h4 class="media-heading" ng-bind-template="{{data.authorName}}  {{data.company}} {{data.position}}"></h4>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+      <ul>
+         <div ng-repeat="authIntroduce in data.authIntroduces">
+      		<li ng-bind-template="{{authIntroduce}}"></li>
+      	 </div>
+      </ul>
+      </div>
       <div class="bs-callout bs-callout-info" id="callout-overview-not-both">
-        <h5>活动回顾</h5>
+        <h5>相关链接</h5>
       </div>
-      <div class="row">
-         <h4>总结</h4>
-         <span>不同的单位对面试过程的设计会有所不同，有的单位会非常正式，有的单位则相对比较随意，但一般来说，面试可以分为以下五个阶段</span>
+    <div class="media" ng-repeat="ec in data.relationCourse">
+            <div class="media-left media-middle">
+              <a href="{{ec.link}}">
+                <img class="media-object img-thumbnail" ng-src="{{ec.thumbnailPath}}" alt="Generic placeholder image"></img>
+              </a>
+            </div>
+            <div class="media-body  media-middle">
+              <h3 class="media-heading text-primary">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
+              </h3>
+              <h4 class = "strong" ng-bind-template="{{ec.title}}"></h4>
+              <p ng-bind-template="{{ec.introduce}}"></p>
+              <h4 class = "strong" ng-bind-template="讲课地点  {{ec.address}}"></h4>
+              <h4 class = "strong" ng-bind-template="讲课时间  {{ec.startTime}}"></h4>
+            </div>
       </div>
-       <div class="bs-callout bs-callout-info" id="callout-overview-not-both">
-        <h5>精彩瞬间</h5>
-      </div>
-           <div class="row">
-      <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#">
-          <img src="../img/international.jpg" class="img-rounded" alt=""></img>
-      </a>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#">
-          <img src="../img/international.jpg" class="img-rounded" alt=""></img>
-      </a>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#">
-          <img src="../img/international.jpg" class="img-rounded" alt=""></img>
-      </a>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#">
-          <img src="../img/international.jpg" class="img-rounded" alt=""></img>
-      </a>
-      </div>
-    </div>
-    </div>
+</div>
     <br></br>
     <br></br>
     <br></br>

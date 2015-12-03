@@ -54,6 +54,14 @@ public interface YlhDao {
 	 * @return
 	 */
 
-	List<OfflineClassDetailVO> queryOfflineClassDetail(String classid);
+	List<OfflineClassDetailVO> queryOfflineClassDetail(Map<String,Object> params);
+	
+	/**
+	 * 查询相关线下课程
+	 * @param params
+	 * @return
+	 */
+
+	 List<OfflineClassSurveyVO> queryRelationOfflineClassSurvey(Map<String, Object> params);
 	
 }
