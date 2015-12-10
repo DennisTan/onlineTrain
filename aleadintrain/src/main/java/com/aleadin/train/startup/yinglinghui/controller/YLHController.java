@@ -36,6 +36,62 @@ public class YLHController {
 		return "ylhIndex";
 	}
 	
+	@RequestMapping(value="/ylh/elitecourse")
+	public String ylhElitecourse() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/ylh/superstarcourse")
+	public String ylhSuperstarcourse() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/ylh/topicarticle")
+	public String ylhTopicarticle() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/ylh/datebar")
+	public String ylhDatebar() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/careerpreview/onlinecourse")
+	public String careerpreviewOnlinecourse() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/careerpreview/offlinecourse")
+	public String careerpreviewOfflinecourse() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/my/accountmgr")
+	public String myAccountmgr() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/my/ijionyou")
+	public String myIjionyou() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/my/becomeelite")
+	public String myBecomeelite() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/my/eliteclub")
+	public String myEliteclub() {
+		return "ylhIndex";
+	}
+	
+	@RequestMapping(value="/my/myorder")
+	public String myMyorder() {
+		return "ylhIndex";
+	}
+	
+	
 	@RequestMapping(value="/ylh/main.json")
 	public @ResponseBody String ylhMainData() {
 		String mainjson = service.queryYLHMainData();

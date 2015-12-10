@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<process displayName="约汇吧" name="datebar">
+<start displayName="start1" layout="240,12,-1,-1" name="start1">
+<transition g="" name="transition1" offset="0,0" to="taskappoint"/>
+</start>
+<task autoExecute="Y" displayName="学员预约" form="dateBar-step1.html" layout="218,96,-1,-1" name="taskappoint" performType="ANY" taskType="Major">
+<transition g="" name="transition2" offset="0,0" to="taskconfirm"/>
+</task>
+<task autoExecute="Y" displayName="导师确认" layout="218,180,-1,-1" name="taskconfirm" performType="ANY" taskType="Major">
+<transition g="" name="transition3" offset="0,0" to="decisiontech"/>
+</task>
+<task autoExecute="Y" displayName="学员付款" layout="218,264,-1,-1" name="taskpay" performType="ANY" taskType="Major">
+<transition g="" name="transition6" offset="0,0" to="decisionxueyuan"/>
+</task>
+<task autoExecute="Y" displayName="约见" layout="218,348,-1,-1" name="taskdate" performType="ANY" taskType="Major">
+<transition g="" name="transition11" offset="0,0" to="decisiondate"/>
+</task>
+<task autoExecute="Y" displayName="学员评价" layout="218,444,-1,-1" name="taskevaluate" performType="ANY" taskType="Major">
+<transition displayName="完成" g="" name="transition10" offset="0,0" to="end"/>
+</task>
+<end displayName="end1" layout="600,552,-1,-1" name="end"/>
+<decision displayName="decision1" layout="600,182,-1,-1" name="decisiontech">
+<transition displayName="同意" g="" name="transition4" offset="0,0" to="taskpay"/>
+<transition displayName="拒绝" g="" name="transition5" offset="0,0" to="end"/>
+</decision>
+<decision displayName="decision2" layout="504,266,-1,-1" name="decisionxueyuan">
+<transition displayName="付款" g="" name="transition7" offset="0,0" to="taskdate"/>
+<transition displayName="放弃" g="" name="transition8" offset="0,0" to="end"/>
+</decision>
+<decision displayName="decision3" layout="457,350,-1,-1" name="decisiondate">
+<transition displayName="确定" g="" name="transition12" offset="0,0" to="taskevaluate"/>
+<transition displayName="爽约" g="" name="transition13" offset="0,0" to="end"/>
+</decision>
+</process>
