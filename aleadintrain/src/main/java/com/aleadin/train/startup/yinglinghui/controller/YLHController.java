@@ -163,6 +163,19 @@ public class YLHController {
 		return JsonData;
 	}
 	
+	@RequestMapping(value="/ylh/datebar/dateBar-tutorial.html")
+	public String dateBarTutorial()
+	{
+		return "dateBar-tutorial";
+	}
+	
+	@RequestMapping(value="/ylh/datebar.json/{topicid}")
+	public  @ResponseBody String dateBarTutorialData(@PathVariable String topicid) {
+		String JsonData = service.queryDateBarTutorialData();
+		return JsonData;
+	}
+	
+	
 	@RequestMapping(value="/careerpreview/careerpreviewonlinecourse.html")
 	public String onlineCourse()
 	{

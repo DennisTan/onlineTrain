@@ -8,151 +8,22 @@
     </header>
 </div>
 <div class="container-fluid">
-      <div class="title_person">
-    <div class="row">
-        <div class="col-md-6 ">
-            <div class="imgs">
-                <br></br>
-                <img class="img-teacher" src="images/avatar.jpg" alt="导师照片"></img>
+    <div class="media" ng-repeat="tt in data.topics">
+            <div class="media-left media-middle">
+              <a href="{{tt.link}}">
+                <img class="media-object img-thumbnail" ng-src="{{tt.imgPath}}" alt="Generic placeholder image"></img>
+              </a>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="center">
-                <p class="font_title">何蓉蓉</p>
-
-                <p class="font_title">艾英领咨询创始人</p>
-
-                <p class="font_title">万宝盛华前部门经理</p>
+            <div class="media-body  media-middle">
+              <h3 class="media-heading text-primary" ng-bind-template="{{tt.topic}}">
+              </h3>
+              <h4 class = "strong" >
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span ng-bind-template="{{tt.authorName}} {{tt.company}} {{tt.position}}"></span>
+              </h4>
+              <h4 class = "strong" ng-bind-template="{{tt.synopsis}}"></h4>
             </div>
-        </div>
-    </div>
-</div>
-<br></br>
-
-<div class="teacher">
-    <div class="teacher_inf">
-        <h4>导师信息</h4>
-        <hr></hr>
-        <div class="information">
-            <p>我是艾英领企业管理咨询的创始人，艾英领信息科技有限公司
-                的创办者。
-            </p>
-            <p>从事猎头、培训、喜讯等人力资源工作近12年。拥有世界五百
-                强公司管理经验，是人力资源咨询领域的资深人士，目前的身
-                份是连续创业者。</p>
-        </div>
-    </div>
-</div>
-<br></br>
-
-<div class="teacher">
-    <div class="teacher_inf">
-        <h4>导师话题</h4>
-        <hr></hr>
-
-
-        <div>
-            <div style="display: inline-block;">
-                <p class="font-topic">从业与创业，帮你明晰职涯规划</p>
-            </div>
-            <div class="right"><p>约300元/次</p></div>
-
-            <p>未来的道路改如何走，这是个考验人的持久问题，相信每个人
-                在各个阶段都或多或少的有所迷茫。择业时，苦恼选择喜欢的
-                工作还是专业相关的；工作后，会思考该辞职还是留下来 . . .</p>
-        </div>
-        <div class="clean"></div>
-    </div>
-</div>
-<br></br>
-<br></br>
-
-<div class="teacher">
-    <div class="teacher_inf">
-        <h4>学员评论</h4>
-        <hr></hr>
-        <div class="box_person">
-            <div class="imgs">
-                <figure>
-                    <img src="images/avatar.jpg" class="img-student" alt="学员头像"></img>
-                    <figcaption>
-                        <p class="font2">叶俊堂</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div>
-            <div class="center">
-                <p style="font-weight: bold;font-size: 18px">态度亲和，只是渊博。看问题精准到位</p>
-                <br></br>
-
-                <p style="font-size: 14px">参与话题：从业与创业，帮你明晰职涯规划</p>
-            </div>
-            <div class="right"><p>2015-11-11</p></div>
-
-            <div class="center">
-                <br></br>
-
-                <button class="btn-success">查看更多</button>
-            </div>
-        </div>
-        <div style="clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px;"></div>
-    </div>
-</div>
-<br></br>
-
-
-<div style="padding-left: 20px;padding-right: 20px">
-    <p class="font_connect">相关话题</p>
-    <hr style="height:3px;border:none;border-top:3px double #8d8d8d"></hr>
-</div>
-
-<div class="connect">
-    <div class="teacher_inf">
-        <div class="box1">
-            <div class="imgs">
-                <figure>
-                    <img src="images/avatar.jpg" class="img-student" alt="导师头像"></img>
-                    <figcaption>
-                        <p class="font_img">叶俊堂</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="box2">
-            <p style="font-weight: bold;font-size: 18px">创业股权分析：亲兄弟如何明算账？</p>
-            <div class="box_topic"><p>网络红人，广州市发展投资人</p></div>
-            <br></br>
-        </div>
-        <div style="clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px;"></div>
-
-    </div>
-</div>
-<br></br>
-<div class="connect">
-    <div class="teacher_inf">
-        <div class="box1">
-            <div class="imgs">
-                <figure>
-                    <img src="images/avatar.jpg" class="img-student" alt="导师头像"></img>
-                    <figcaption>
-                        <p class="font_img">叶俊堂</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-        <div class="box2">
-            <p style="font-weight: bold;font-size: 18px">创业股权分析：亲兄弟如何明算账？</p>
-            <div class="box_topic"><p>网络红人，广州市发展投资人</p></div>
-            <br></br>
-        </div>
-        <div style="clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px;"></div>
-
-    </div>
-</div>
-<br></br>
-
-<div class="next">
-    <h3>立刻约见</h3>
-</div>
+      </div>
+      <br></br>
+      <br></br>
 </div>

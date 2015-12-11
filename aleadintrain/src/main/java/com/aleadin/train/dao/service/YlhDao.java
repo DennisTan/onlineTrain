@@ -8,6 +8,7 @@ import com.aleadin.train.dao.vo.ClassSurveyVO;
 import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.SlideVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
+import com.aleadin.train.dao.vo.TutorialTopicSurveyVO;
 
 public interface YlhDao {
 	/**
@@ -63,5 +64,14 @@ public interface YlhDao {
 	 */
 
 	 List<OfflineClassSurveyVO> queryRelationOfflineClassSurvey(Map<String, Object> params);
+	 
+	 /**
+		 * 查询约汇吧导师列表
+		 * @param params
+		 * @return
+		 */
+
+     List<TutorialTopicSurveyVO> queryTutorialTopicSurvey(Map<String, Object> params);
+     
 	
 }

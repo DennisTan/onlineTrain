@@ -39,6 +39,11 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
             controller: 'dateBarCtrl',
             controllerAs: 'datebar'
           })
+          .when('/ylh/datebar/:topicid', {
+            templateUrl: 'ylh/datebar/dateBar-tutorial.html',
+            controller: 'dateBarTutorialCtrl',
+            controllerAs: 'dateBarTutorial'
+          })
           .when('/careerpreview/onlinecourse', {
             templateUrl: 'careerpreview/careerpreviewonlinecourse.html',
             controller: 'OnlineCourseCtrl',
@@ -134,6 +139,15 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
       this.$location = $location;
       this.$routeParams = $routeParams;
       $http.get('/ylh/datebar.json').success(function(data) {
+    	    $scope.data= data;
+    	  });
+  }])
+  .controller('dateBarTutorialCtrl', ['$scope','$http','$route','$routeParams','$location',
+    function($scope,$http,$route, $routeParams, $location) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      $http.get('/ylh/datebar.json/'+$routeParams.topicid).success(function(data) {
     	    $scope.data= data;
     	  });
   }])

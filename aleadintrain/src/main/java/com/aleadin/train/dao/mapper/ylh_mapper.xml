@@ -35,4 +35,8 @@
 	select a.ID,a.title,a.introduce,a.startTime,a.thumbnailPath,a.address,a.authorID,b.realName,b.company,b.position from TBL_OFFLINECLASS a, TBL_ACCOUNT b where 1 = 1 and a.authorID = b.ID and a.ID &lt;&gt; #{classid} LIMIT 2
 	</select>
 	
+	<select id="queryTutorialTopicSurvey" resultType="TutorialTopicSurveyVO">
+	select a.ID,a.teacherID,a.topic,a.address,b.realName,b.synopsis,b.imgPath,b.company,b.position from TBL_APPOINT_INFO a, TBL_ACCOUNT b where 1 = 1 and a.teacherID = b.ID order by a.address
+	</select>
+	
 </mapper>

@@ -18,6 +18,7 @@ import com.aleadin.train.dao.vo.ClassSurveyVO;
 import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
 import com.aleadin.train.dao.vo.SlideVO;
+import com.aleadin.train.dao.vo.TutorialTopicSurveyVO;
 import com.aleadin.train.model.AccountMgrViewData;
 import com.aleadin.train.model.BecomeEliteViewData;
 import com.aleadin.train.model.CarouselSlideViewData;
@@ -34,6 +35,8 @@ import com.aleadin.train.model.OfflineCourseViewData;
 import com.aleadin.train.model.OnlineCourseViewData;
 import com.aleadin.train.model.SupperStarCourseViewData;
 import com.aleadin.train.model.TopicArticleViewData;
+import com.aleadin.train.model.TutorialTopicDetailViewData;
+import com.aleadin.train.model.TutorialTopicSurveyViewData;
 import com.aleadin.train.model.YLHMainViewData;
 import com.alibaba.fastjson.JSON;
 
@@ -245,9 +248,29 @@ public class YLHService {
 //约汇吧
   public String queryDateBarData()
   {
-	  DateBarViewData sscvd = new DateBarViewData();
-	  sscvd.setPageTitle("约汇吧");
-	  String Data = JSON.toJSONString(sscvd);
+	  DateBarViewData dbvd = new DateBarViewData();
+	  dbvd.setPageTitle("约汇吧");
+	  Map<String, Object> params = new HashMap<String, Object>();
+	  List<TutorialTopicSurveyVO> list = ylhDao.queryTutorialTopicSurvey(params);
+	  ArrayList<TutorialTopicSurveyViewData> ttsvlist = new ArrayList<TutorialTopicSurveyViewData>();
+	  for (int i = 0; i < list.size(); i++) {
+		  TutorialTopicSurveyViewData ttsview = new TutorialTopicSurveyViewData();
+		  TutorialTopicSurveyVO ttsvo = list.get(i);
+		  ttsview.setID(ttsvo.getID());
+		  ttsview.setTeacherID(ttsvo.getTeacherID());
+		  ttsview.setTopic(ttsvo.getTopic());
+		  ttsview.setAddress(ttsvo.getAddress());
+		  ttsview.setAuthorName(ttsvo.getRealName());
+		  ttsview.setSynopsis(ttsvo.getSynopsis());
+		  ttsview.setImgPath(ttsvo.getImgPath());
+		  ttsview.setCompany(ttsvo.getCompany());
+		  ttsview.setPosition(ttsvo.getPosition());
+		  ttsview.setIndustry(ttsvo.getIndustry());
+		  ttsview.setLink("/ylh/datebar/"+ttsvo.getID());
+		  ttsvlist.add(ttsview);
+	  }
+	  dbvd.setTopics(ttsvlist);
+	  String Data = JSON.toJSONString(dbvd);
 	  return Data;
   }
   
@@ -432,6 +455,13 @@ public String queryMyOrderData() {
 	viewData.setPageTitle("我的订单");
 	String Data = JSON.toJSONString(viewData);
 	  return Data;
+}
+
+public String queryDateBarTutorialData() {
+	TutorialTopicDetailViewData viewData = new TutorialTopicDetailViewData();
+	viewData.setPageTitle("约汇导师");
+	String Data = JSON.toJSONString(viewData);
+	return Data;
 }
 
 }
