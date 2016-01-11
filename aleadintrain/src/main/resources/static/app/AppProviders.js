@@ -97,14 +97,17 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
     	    $scope.data= data;
     	  });
   }])
-  .controller('EliteClassCtrl', ['$scope','$http','$route','$routeParams','$location',
-    function($scope,$http,$route, $routeParams, $location) {
+  .controller('EliteClassCtrl', ['$scope','$http','$route','$routeParams','$location','$sce',
+    function($scope,$http,$route, $routeParams, $location,$sce) {
       this.$route = $route;
       this.$location = $location;
       this.$routeParams = $routeParams;
       $http.get('/ylh/eliteclass.json/'+$routeParams.classid).success(function(data) {
     	    $scope.data= data;
     	  });
+      $scope.trustSrc = function(url){
+    	    return $sce.trustAsResourceUrl(url);
+    	};
   }])
   .controller('SuperStarCourseCtrl', ['$scope','$http','$route','$routeParams','$location',
     function($scope,$http,$route, $routeParams, $location) {
