@@ -5,6 +5,9 @@ public class ClassDetailVo
 	// 课程ID
 	private String classid;
 
+	//视屏标题图片
+	private String poster;
+	
 	// 课程视频路径
 	private String vediopath;
 
@@ -133,4 +136,13 @@ public class ClassDetailVo
 	public void setAuthImgPath(String authImgPath) {
 		this.authImgPath = authImgPath;
 	}
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+	
 }

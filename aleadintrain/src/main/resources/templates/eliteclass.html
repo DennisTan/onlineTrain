@@ -9,9 +9,10 @@
 </div>
 <div class="container-fluid">
       <div class="row" align = "center">
-        <video src="{{data.vediopath}}" controls="controls" width="320" type="video/mp4">
-        your browser does not support the video tag
-       </video>
+      <video id="eliteclass-video" class="video-js vjs-default-skin" controls="controls" preload="auto" width="100%" height="400"
+  poster="{{data.poster}}" data-setup="{}">
+    <source ng-src="trustSrc(data.vediopath)" type='video/mp4'></source>
+  </video>
      </div>
       <div class="row">
          <h4>课程名</h4>

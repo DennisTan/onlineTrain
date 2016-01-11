@@ -132,6 +132,7 @@ public class YLHService {
 	  {
 		  ClassDetailVo cdVO = classlist.get(0);
 		  eliteClass.setClassid(cdVO.getClassid());
+		  eliteClass.setPoster(cdVO.getPoster());
 		  eliteClass.setVediopath(cdVO.getVediopath());
 		  eliteClass.setTitle(cdVO.getTitle());
 		  eliteClass.setIntroduce(cdVO.getIntroduce());

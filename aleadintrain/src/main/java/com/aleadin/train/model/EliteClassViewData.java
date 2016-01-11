@@ -9,6 +9,9 @@ public class EliteClassViewData {
 	// 课程ID
 	private String classid;
 
+	//课程视屏标题图片
+	private String poster;
+	
 	// 课程视频路径
 	private String vediopath;
 
@@ -135,6 +138,14 @@ public class EliteClassViewData {
 
 	public void setRelationCourse(java.util.List<CourseViewData> relationCourse) {
 		this.relationCourse = relationCourse;
+	}
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}
 
 }
