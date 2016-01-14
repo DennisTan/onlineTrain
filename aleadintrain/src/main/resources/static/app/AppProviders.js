@@ -1,8 +1,8 @@
 (function(angular) {
   'use strict';
 angular.module('aleadin', ['ngRoute', 'ngAnimate'])
-  .config(['$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider','$sceDelegateProvider',
+    function($routeProvider, $locationProvider,$sceDelegateProvider) {
       $routeProvider
         .when('/ylh/main.do', {
           templateUrl: 'ylh/yinlinghuimain.html',
@@ -86,6 +86,12 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
             });
       
       $locationProvider.html5Mode(true);
+      
+      $sceDelegateProvider.resourceUrlWhitelist([
+                                                 'self',
+                                                 'http://test-aleadin-com.oss-cn-shenzhen.aliyuncs.com/video/marketing_720480_01.mp4',
+                                                 'http://**.aliyuncs.com/**'
+                                                 ]);
   }])
   
   .controller('YingLinHuiMainCtrl', ['$scope','$http','$route','$routeParams','$location',
@@ -102,6 +108,7 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
       this.$route = $route;
       this.$location = $location;
       this.$routeParams = $routeParams;
+      this.$sce = $sce;
       $http.get('/ylh/eliteclass.json/'+$routeParams.classid).success(function(data) {
     	    $scope.data= data;
     	  });
