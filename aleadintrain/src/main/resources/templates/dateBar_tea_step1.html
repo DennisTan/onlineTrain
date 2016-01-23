@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <title>约汇吧</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datebar.css" rel="stylesheet">
+    <link rel="Aleadin icon" href="images/icon-title.png">
+    <script type="text/javascript" src="css/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3 class="font_white">约见列表</h3>
+    </div>
+</header>
+<ul id="teaTab" class="nav navbar-inverse nav-tabs">
+    <li class="active"><a href="#all" data-toggle="tab" class="order">待约见</a></li>
+    <li><a href="#complete" data-toggle="tab" class="order">完成</a></li>
+</ul>
+
+<div id="teaTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="all">
+        <div class="date_list" id="first">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="item_title">
+                        <img src="images/avatar.jpg" class="item_img" alt="学员头像"/>
+
+                        <p class="font_people">与叶俊堂约见</p>
+
+                    </div>
+                    <div class="item_state bg_first">
+                        <p style="margin: 0px">预约申请</p>
+                    </div>
+                    <div style="float: left">
+                        <p class="font_people" style="font-weight: bolder">从业与创业，帮你明晰职涯规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="date_list" id="second">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="item_title">
+                        <img src="images/avatar.jpg" class="item_img" alt="学员头像"/>
+
+                        <p class="font_people">与叶俊堂约见</p>
+
+                    </div>
+                    <div class="item_state bg_second">
+                        <p style="margin: 0px">等待付款</p>
+                    </div>
+                    <div style="float: left">
+                        <p class="font_people" style="font-weight: bolder">从业与创业，帮你明晰职涯规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="date_list" id="third">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="item_title">
+                        <img src="images/avatar.jpg" class="item_img" alt="学员头像"/>
+
+                        <p class="font_people" >与叶俊堂约见</p>
+
+                    </div>
+                    <div class="item_state bg_third">
+                        <p style="margin: 0px">即将约见</p>
+                    </div>
+                    <div style="float: left">
+                        <p class="font_people" style="font-weight: bolder">从业与创业，帮你明晰职涯规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="tab-pane fade" id="complete">
+        <div class="date_list" id="last">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="item_title">
+                        <img src="images/avatar.jpg" class="item_img" alt="学员头像"/>
+
+                        <p class="font_people">与叶俊堂约见</p>
+
+                    </div>
+                    <div class="item_state bg_last">
+                        <p style="margin: 0px">学员评价</p>
+                    </div>
+                    <div style="float: left">
+                        <p class="font_people" style="font-weight: bolder">从业与创业，帮你明晰职涯规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function(){
+        var obj = document.getElementById('first');
+        obj.onclick=function(){
+            window.location.href="dateBar_tea_step2.html";
+        }
+        var obj = document.getElementById('second');
+        obj.onclick=function(){
+            window.location.href="dateBar_tea_step3.html";
+        }
+        var obj = document.getElementById('third');
+        obj.onclick=function(){
+            window.location.href="dateBar_tea_step4.html";
+        }
+        var obj = document.getElementById('last');
+        obj.onclick=function(){
+            window.location.href="dateBar_tea_step5.html";
+        }
+    }
+</script>
+
+</body>
+</html>

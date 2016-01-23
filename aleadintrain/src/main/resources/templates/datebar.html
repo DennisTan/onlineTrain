@@ -1,29 +1,28 @@
 <div>
-    <header class="header bg-primary">
-      <div class="page-header">
-        <div class="container">
-            <h1 align = "center" ng-bind-template="{{data.pageTitle}}"></h1>
-        </div>
-      </div>
-    </header>
+	<header class="header bg_header">
+		<div class="header_page">
+			<div class="container">
+				<h3 align="center" ng-bind-template="{{data.pageTitle}}"></h3>
+			</div>
+		</div>
+	</header>
 </div>
 <div class="container-fluid">
-    <div class="media" ng-repeat="tt in data.topics">
-            <div class="media-left media-middle">
-              <a href="{{tt.link}}">
-                <img class="media-object img-thumbnail" ng-src="{{tt.imgPath}}" alt="Generic placeholder image"></img>
-              </a>
-            </div>
-            <div class="media-body  media-middle">
-              <h3 class="media-heading text-primary" ng-bind-template="{{tt.topic}}">
-              </h3>
-              <h4 class = "strong" >
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span ng-bind-template="{{tt.authorName}} {{tt.company}} {{tt.position}}"></span>
-              </h4>
-              <h4 class = "strong" ng-bind-template="{{tt.synopsis}}"></h4>
-            </div>
-      </div>
-      <br></br>
-      <br></br>
+	<div class="media bg-white" ng-repeat="tt in data.topics">
+		<div class="media-left media-middle">
+			<a href="{{tt.link}}"> <img class="media-object img-thumbnail"
+				ng-src="{{tt.imgPath}}" alt="Generic placeholder image"></img>
+			</a>
+		</div>
+		<div class="media-body  media-middle">
+			<h4 class="media-heading font_blue" ng-bind-template="{{tt.topic}}">
+			</h4>
+			<h5 class="strong">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span
+					ng-bind-template="{{tt.authorName}} {{tt.company}} {{tt.position}}"></span>
+			</h5>
+			<h5 class="strong" ng-bind-template="{{tt.synopsis}}"></h5>
+		</div>
+	</div>
+	<br></br> <br></br>
 </div>

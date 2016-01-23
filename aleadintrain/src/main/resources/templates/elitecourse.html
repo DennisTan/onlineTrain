@@ -1,66 +1,70 @@
 <div>
-    <header class="header bg-primary">
-      <div class="page-header">
-        <div class="container">
-            <h1 align = "center" ng-bind-template="{{data.pageTitle}}"></h1>
-        </div>
-      </div>
-    </header>
+	<header class="header bg_header">
+		<div class="header_page">
+			<div class="container">
+				<h3 align="center" ng-bind-template="{{data.pageTitle}}"></h3>
+			</div>
+		</div>
+	</header>
 </div>
 <div class="container-fluid">
-                <div id="aleadin-Carousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#aleadin-Carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#aleadin-Carousel" data-slide-to="1"></li>
-                <li data-target="#aleadin-Carousel" data-slide-to="2"></li>
-              </ol>
+	<div id="aleadin-Carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#aleadin-Carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#aleadin-Carousel" data-slide-to="1"></li>
+			<li data-target="#aleadin-Carousel" data-slide-to="2"></li>
+		</ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox" align="center">
-                  <div class="item active">
-                    <a href="{{data.eliteCourseslides[0].targetPath}}">
-                    	<img class="first-slide" ng-src="{{data.eliteCourseslides[0].imgPath}}" alt="First slide image"></img>
-                    </a>
-                  </div>
-                  <div class="item">
-                  	<a href="{{data.eliteCourseslides[1].targetPath}}">
-                    	<img class="second-slide" ng-src="{{data.eliteCourseslides[1].imgPath}}" alt="Second slide image"></img>
-                    </a>
-                  </div>
-                  <div class="item">
-                  	<a href="{{data.eliteCourseslides[2].targetPath}}">
-                    	<img class="third-slide" ng-src="{{data.eliteCourseslides[2].imgPath}}" alt="Third slide image"></img>
-                    </a>
-                  </div>
-                </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox" align="center">
+			<div class="item active">
+				<a href="{{data.eliteCourseslides[0].targetPath}}"> <img
+					class="first-slide" ng-src="{{data.eliteCourseslides[0].imgPath}}"
+					alt="First slide image"></img>
+				</a>
+			</div>
+			<div class="item">
+				<a href="{{data.eliteCourseslides[1].targetPath}}"> <img
+					class="second-slide" ng-src="{{data.eliteCourseslides[1].imgPath}}"
+					alt="Second slide image"></img>
+				</a>
+			</div>
+			<div class="item">
+				<a href="{{data.eliteCourseslides[2].targetPath}}"> <img
+					class="third-slide" ng-src="{{data.eliteCourseslides[2].imgPath}}"
+					alt="Third slide image"></img>
+				</a>
+			</div>
+		</div>
 
-              <!-- Controls -->
-              <a class="left carousel-control" href="#aleadin-Carousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#aleadin-Carousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-      </div>
-    <br></br>
-    <div class="media" ng-repeat="ec in data.eliteCourse">
-            <div class="media-left media-middle">
-              <a href="{{ec.link}}">
-                <img class="media-object img-thumbnail" ng-src="{{ec.imagePath}}" alt="Generic placeholder image"></img>
-              </a>
-            </div>
-            <div class="media-body  media-middle">
-              <h3 class="media-heading text-primary">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
-              </h3>
-              <h4 class = "strong" ng-bind-template="{{ec.title}}"></h4>
-              <p ng-bind-template="{{ec.introduce}}"></p>
-            </div>
-      </div>
-    </div>
-    <br></br>
-    <br></br>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#aleadin-Carousel"
+			role="button" data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#aleadin-Carousel"
+			role="button" data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<br></br>
+	<div class="media bg-white" ng-repeat="ec in data.eliteCourse">
+		<div class="media-left media-middle">
+			<a href="{{ec.link}}"> <img class="media-object img-thumbnail"
+				ng-src="{{ec.imagePath}}" alt="Generic placeholder image"></img>
+			</a>
+		</div>
+		<div class="media-body  media-middle">
+			<h4 class="media-heading font_blue">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span
+					ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
+			</h4>
+			<h5 class="strong" ng-bind-template="{{ec.title}}"></h5>
+			<p ng-bind-template="{{ec.introduce}}"></p>
+		</div>
+	</div>
+</div>
+<br></br>
+<br></br>

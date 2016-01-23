@@ -1,64 +1,82 @@
 <div>
-    <header class="header bg-primary">
-      <div class="page-header">
-        <div class="container">
-            <h1 align = "center" ng-bind-template="{{data.pageTitle}}"></h1>
-        </div>
-      </div>
-    </header>
+	<header class="header bg_header">
+		<div class="header_page">
+			<div class="container">
+				<h3 align="center" ng-bind-template="{{data.pageTitle}}"></h3>
+			</div>
+		</div>
+	</header>
 </div>
 <div class="container-fluid">
-      <div class="row" align = "center">
-      <video id="eliteclass-video" class="video-js vjs-default-skin" src="{{data.vediopath}}" controls="controls" preload="auto" width="100%" height="400"
-  poster="{{data.poster}}" data-setup="{}">
-  </video>
-     </div>
-      <div class="row">
-         <h4>课程名</h4>
-         <span>{{data.title}}</span>
-      </div>
-      <div class="row">
-         <h4>课程介绍</h4>
-         <span>{{data.introduce}}</span>
-      </div>
-      <div class="row">
-         <h4>导师介绍</h4>
-         <div class="media">
-            <div class="media-left media-middle">
-              <a href="#">
-                <img class="media-object img-circle" ng-src="{{data.authImgPath}}" alt="Generic placeholder image"></img>
-              </a>
-            </div>
-            <div class="media-body  media-middle">
-              <h4 class="media-heading">{{data.authorName}}  {{data.company}} {{data.position}}</h4>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-      <ul>
-         <div ng-repeat="authIntroduce in data.authIntroduces">
-      	<li>
-      	{{authIntroduce}}
-      	</li>
-      	</div>
-      </ul>
-      </div>
-      <div class="bs-callout bs-callout-info" id="callout-overview-not-both">
-        <h5>相关链接</h5>
-      </div>
-       <div class="media" ng-repeat="ec in data.relationCourse">
-            <div class="media-left media-middle">
-              <a href="{{ec.link}}">
-                <img class="media-object img-thumbnail" ng-src="{{ec.imagePath}}" alt="Generic placeholder image"></img>
-              </a>
-            </div>
-            <div class="media-body  media-middle">
-              <h3 class="media-heading text-primary">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
-              </h3>
-              <h4 class = "strong" ng-bind-template="{{ec.title}}"></h4>
-              <p ng-bind-template="{{ec.introduce}}"></p>
-            </div>
-      </div>
+	<div class="row" align="center">
+		<video id="eliteclass-video" class="video-js vjs-default-skin"
+			controls="controls" preload="auto" width="100%" height="400"
+			poster="{{data.poster}}" data-setup="{}">
+			<source
+				ng-src="http://test-aleadin-com.oss-cn-shenzhen.aliyuncs.com/video/marketing_720480_01.mp4"
+				type='video/mp4'></source>
+		</video>
+	</div>
 </div>
+
+<div class="container-fluid">
+	<div>
+	<div class="container bg-white">
+		<h4 class="font_blue">课程名</h4>
+		<span>{{data.title}}</span>
+	</div>
+</div>
+<div>
+	<div class="container bg-white">
+		<h4 class="font_blue">课程介绍</h4>
+		<span>{{data.introduce}}</span>
+	</div>
+</div>
+<div>
+	<div class="container bg-white">
+		<h4 class="font_blue">导师介绍</h4>
+		<div class="media bg-white">
+			<div class="media-left media-middle">
+				<a href="#"> <img class="media-object img-circle"
+					ng-src="{{data.authImgPath}}" alt="Generic placeholder image"></img>
+				</a>
+			</div>
+			<div class="media-body  media-middle">
+				<h4 class="media-heading">{{data.authorName}} {{data.company}}
+					{{data.position}}</h4>
+			</div>
+		</div>
+
+		<div class="container bg-white">
+			<ul style="list-style:none;">
+				<div ng-repeat="authIntroduce in data.authIntroduces">
+					<li>{{authIntroduce}}</li>
+				</div>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="bs-callout bs-callout-info white"
+	id="callout-overview-not-both">
+	<h5>相关链接</h5>
+</div>
+<div class="media bg-white" ng-repeat="ec in data.relationCourse">
+	<div class="media-left media-middle">
+		<a href="{{ec.link}}"> <img class="media-object img-thumbnail"
+			ng-src="{{ec.imagePath}}" alt="Generic placeholder image"></img>
+		</a>
+	</div>
+	<div class="media-body  media-middle">
+		<h4 class="media-heading font_blue">
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span
+				ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
+		</h4>
+		<h5 class="strong" ng-bind-template="{{ec.title}}"></h5>
+		<p ng-bind-template="{{ec.introduce}}"></p>
+	</div>
+</div>
+	
+</div>
+
+

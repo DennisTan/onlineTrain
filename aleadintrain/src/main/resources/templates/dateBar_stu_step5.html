@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <title>约汇吧</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datebar.css" rel="stylesheet">
+    <link rel="Aleadin icon" href="images/icon-title.png">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3 class="font_white">约汇吧</h3>
+    </div>
+</header>
+<div class="list">
+    <div class="first">
+        <img class="ing" src="images/list-5.png">
+    </div>
+</div>
+<br>
+<h3 style="text-align: center">撰写评论</h3>
+<div class="discuss_title">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="title_teacher">
+
+                <figure>
+                    <img src="images/avatar.jpg" class="img_teacher"  alt="学员头像"/>
+                    <figcaption>
+                        <p class="font_teacher"><a class="link" href="person.html">何蓉蓉</a></p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="title_right">
+                <h4 style="color: #fff">从业与创业，帮你明晰职涯规划</h4>
+                <p style="color: #fff">约见满意度：<span>(轻按星形评分)</span></p>
+                <img  id="img1" src="images/star_dark.png" class="star" onclick="change_pic1()">
+                <img  id="img2" src="images/star_dark.png" class="star" onclick="change_pic2()">
+                <img  id="img3" src="images/star_dark.png" class="star" onclick="change_pic3()">
+                <img  id="img4" src="images/star_dark.png" class="star" onclick="change_pic4()">
+                <img  id="img5" src="images/star_dark.png" class="star" onclick="change_pic5()">
+
+            </div>
+            <script>
+                function change_pic1(){
+                    var imgObj = document.getElementById("img1");
+                    if( imgObj.getAttribute("src",1)=="images/star_dark.png") {
+                        imgObj.src = "images/star.png";
+                    }else{
+                        imgObj.src = "images/star_dark.png";
+                    }
+                }
+                function change_pic2() {
+                    var imgObj = document.getElementById("img2");
+                    if (imgObj.getAttribute("src", 1) == "images/star_dark.png") {
+                        imgObj.src = "images/star.png";
+                    } else {
+                        imgObj.src = "images/star_dark.png";
+                    }
+                }
+                function change_pic3() {
+                    var imgObj = document.getElementById("img3");
+                    if (imgObj.getAttribute("src", 1) == "images/star_dark.png") {
+                        imgObj.src = "images/star.png";
+                    } else {
+                        imgObj.src = "images/star_dark.png";
+                    }
+                }
+                function change_pic4() {
+                    var imgObj = document.getElementById("img4");
+                    if (imgObj.getAttribute("src", 1) == "images/star_dark.png") {
+                        imgObj.src = "images/star.png";
+                    } else {
+                        imgObj.src = "images/star_dark.png";
+                    }
+                }
+                function change_pic5() {
+                    var imgObj = document.getElementById("img5");
+                    if (imgObj.getAttribute("src", 1) == "images/star_dark.png") {
+                        imgObj.src = "images/star.png";
+                    } else {
+                        imgObj.src = "images/star_dark.png";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+    <textarea class="discuss" maxlength="250" placeholder="说说你对这次约见的感受吧！是否获益匪浅呢？"></textarea>
+</div>
+
+<br>
+<br>
+<br>
+
+<div id="btn" class="btn navbar-fixed-bottom">
+    <h3 class="font_white"style="margin: 0px;">提交</h3>
+</div>
+<script>
+    $(document).ready(function(){
+        console.log("??????")
+        $("#btn").click(function(){
+            alert("评论成功");
+        })
+    })
+</script>
+</body>
+</html>

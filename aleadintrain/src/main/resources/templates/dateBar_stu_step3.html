@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <title>约汇吧</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datebar.css" rel="stylesheet">
+    <link rel="Aleadin icon" href="images/icon-title.png">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <style type="text/css">
+        .date_active {
+            border: 6px solid #31AF05;
+            border-left: 20px solid #31AF05;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3 class="font_white">约汇吧</h3>
+    </div>
+</header>
+<div>
+    <img class="ing" src="images/list-3.png">
+</div>
+<br>
+<div class="container">
+    <h3 style="text-align: center">收到dennis的确认</h3>
+    <div class="topic">
+        <div class="box">
+            <h4 >从业与创业，帮你明晰职涯规划</h4>
+            <h5 style="text-align:right;">300元/次,约两小时</h5>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div>
+    <div class="container">
+        <h4 class="font_blue">选择老师安排的约见时段</h4>
+
+        <div class="date">
+            <div class="date_content">
+                <div class="time">
+                    <div class="input-group  ">
+                        <span class="input-group-time">时间：</span>
+
+                        <p>2015年12月19日&nbsp;14:00</p>
+                    </div>
+                </div>
+                <div class="address">
+                    <div class="input-group input-group-lg">
+                        <span class="add input-group-time ">地点：</span>
+
+                        <div id="city">
+                            <p>广东省广州市天河区</p>
+
+                            <p>中山大道西183号天河城广场</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+
+        <div class="date">
+            <div class="date_content">
+                <div class="time">
+                    <div class="input-group  ">
+                        <span class="input-group-time">时间：</span>
+
+                        <p>2015年12月19日&nbsp;14:00</p>
+                    </div>
+                </div>
+                <div class="address">
+                    <div class="input-group input-group-lg">
+                        <span class="add input-group-time ">地点：</span>
+
+                        <div id="city_1">
+                            <p>广东省广州市天河区</p>
+
+                            <p>中山大道西183号天河城广场</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+<div class="container">
+    <h4 class="font_blue">你要请教的话题</h4>
+    <div class="question">详细描述问题有助于导师有的放矢，也能得到导师更迅捷的答复。</div>
+    <h4 class="font_blue">您的目前状况</h4>
+    <div class="question">详细的介绍能让导师了解你，提供更针对性的帮助。</div>
+</div>
+<div class="container">
+    <h4 class="font_blue">请选择支付方式</h4>
+
+    <div class="pay_type">
+    </div>
+</div>
+<br>
+
+<div class="pay_button">
+    <div class="pay_button_left">
+        <p class="font_all">合计：</p>
+
+        <p class="font_money">¥300元</p>
+    </div>
+    <div class="pay_button_1"><p class="font_pay"><a class="link" href="test.html">放弃</a></p></div>
+    <div class="pay_button_right"><p class="font_pay"><a class="link" href="dateBar_stu_step4.html">付款</a></p></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".date_content").click(function () {
+            clear();
+            $(this).addClass("date_active");
+        });
+        function clear() {
+            $(".date_content").each(function () {
+                if ($(this).hasClass("date_active")) {
+                    $(this).removeClass("date_active");
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

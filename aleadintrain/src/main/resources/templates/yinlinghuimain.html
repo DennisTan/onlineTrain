@@ -1,11 +1,11 @@
 <div>
-	      <header class="header bg-primary">
-	        <div class="page-header">
-	          <div class="container">
-	              <h1 align = "center" ng-bind-template="{{data.pageTitle}}"></h1>
-	          </div>
-	        </div>
-	      </header>
+	      <header class="header bg_header">
+		<div class="header_page">
+			<div class="container">
+				<h3 align="center" ng-bind-template="{{data.pageTitle}}"></h3>
+			</div>
+		</div>
+	</header>
 </div> 
 <div class="container-fluid">
         <div id="aleadin-Carousel" class="carousel slide" data-ride="carousel">
@@ -45,7 +45,7 @@
                 <span class="sr-only">Next</span>
               </a>
       </div>
-      <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+      <div class="bs-callout bs-callout-danger white" id="callout-overview-not-both">
         <h4>大咖课程</h4>
       </div>
       <div class="media" ng-repeat="ssc in data.superStarCourse">
@@ -55,31 +55,31 @@
               </a>
             </div>
             <div class="media-body  media-middle">
-              <h3 class="media-heading text-primary">
+              <h4 class="media-heading text-primary">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <span ng-bind-template="{{ssc.authorName}}    {{ssc.company}}    {{ssc.position}}"></span>
-              </h3>
-              <h4 class = "strong" ng-bind-template="{{ssc.title}}"></h4>
+              </h4>
+              <h5 class = "strong" ng-bind-template="{{ssc.title}}"></h5>
               <p ng-bind-template="{{ssc.introduce}}"></p>
             </div>
       </div>
 
-      <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
+      <div class="bs-callout bs-callout-danger white" id="callout-overview-not-both">
         <h4>菁英课程</h4>
       </div>
 
-      <div class="media" ng-repeat="ec in data.eliteCourse">
+      <div class="media bg-white" ng-repeat="ec in data.eliteCourse">
             <div class="media-left media-middle">
               <a href="{{ec.link}}">
                 <img class="media-object img-thumbnail" ng-src="{{ec.imagePath}}" alt="Generic placeholder image"></img>
               </a>
             </div>
             <div class="media-body  media-middle">
-              <h3 class="media-heading text-primary">
+              <h4 class="media-heading font_blue">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <span ng-bind-template="  {{ec.authorName}}    {{ec.company}}    {{ec.position}}"></span>
-              </h3>
-              <h4 class = "strong" ng-bind-template="{{ec.title}}"></h4>
+              </h4>
+              <h5 class = "strong" ng-bind-template="{{ec.title}}"></h5>
               <p ng-bind-template="{{ec.introduce}}"></p>
             </div>
       </div>

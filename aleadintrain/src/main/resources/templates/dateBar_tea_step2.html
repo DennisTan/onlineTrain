@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <title>约汇吧</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datebar.css" rel="stylesheet">
+    <link rel="Aleadin icon" href="images/icon-title.png">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cityselect.js"></script>
+
+</head>
+<body>
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3 class="font_white">约汇吧</h3>
+    </div>
+</header>
+<div class="list">
+    <div class="first">
+        <img class="ing" src="images/list-2.png">
+    </div>
+
+
+    <div class="container">
+        <h3 style="text-align: center">安排约见时段</h3>
+        <div class="topic">
+            <div class="box3" >
+                <h4 style="color: #ffffff">从业与创业，帮你明晰职涯规划</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h4 class="font_blue">学员请教的话题</h4>
+    <div class="question" ><p>详细描述问题有助于导师有的放矢，也能得到导师更迅捷的答复。</p></div>
+    <h4 class="font_blue">学员的目前状况</h4>
+    <div class="question" ><p>详细的介绍能让导师了解你，提供更针对性的帮助。</p></div>
+    <h4 class="font_blue">给学员安排约见时段</h4>
+    <div class="date">
+        <div class="date_content">
+            <div class="time">
+                <div class="input-group  ">
+                    <span class="input-group-time">时间：</span>
+                    <input type="datetime-local" class="ipt-area">
+                </div>
+            </div>
+            <div class="address">
+                <div class="input-group input-group-lg">
+                    <span class="add input-group-time ">地点：</span>
+                    <div id="city">
+                        <select class="prov"></select>
+                        <select class="city" disabled="disabled"></select>
+                        <select class="dist" disabled="disabled"></select>
+                    </div>
+                    <input type="text" class="add-area" placeholder="请输入约见地点.">
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br><br>
+
+    <div class="date">
+        <div class="date_content">
+            <div class="time">
+                <div class="input-group  ">
+                    <span class="input-group-time">时间：</span>
+                    <input type="datetime-local" class="ipt-area">
+                </div>
+            </div>
+            <div class="address">
+                <div class="input-group input-group-lg">
+                    <span class="add input-group-time ">地点：</span>
+                    <div id="city_1">
+                        <select class="prov"></select>
+                        <select class="city" disabled="disabled"></select>
+                        <select class="dist" disabled="disabled"></select>
+                    </div>
+                    <input type="text" class="add-area" placeholder="请输入约见地点.">
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+
+</div>
+
+<div class="container">
+    <div class="tips">
+        <p class="font_tips">欢迎使用英领汇约见服务。我们建议</p>
+
+        <p>1.提前与对方沟通交谈内容</p>
+
+        <p>2.如无说明均为一对一面聊。建议选择公共场所作为约见地点。</p>
+
+        <p>3.准时到达。约见过程中若发生消费，与对方AA。</p>
+    </div>
+</div>
+<br>
+<div class="button">
+    <div class="accept"><h3 style="margin: 0px;"><a class="link" href="dateBar_tea_step3.html">接受</a></h3> </div>
+    <div class="reject"><h3 style="margin: 0px;"><a class="link" href="dateBar_tea_step1.html">拒绝</a></h3> </div>
+    <div class="clean"></div>
+</div>
+<script>
+    $("#city").citySelect({
+        prov:"广东",
+        city:"广州",
+        dist:"天河区",
+        nodata:"none"
+    });
+    $("#city_1").citySelect({
+        prov:"广东",
+        city:"广州",
+        dist:"天河区",
+        nodata:"none"
+    });
+</script>
+</body>
+</html>
