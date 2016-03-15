@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-    <title>约汇吧</title>
+    <title>英领汇</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/datebar.css" rel="stylesheet">
     <link rel="Aleadin icon" href="images/icon-title.png">
@@ -11,26 +11,15 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<header class="header bg_header">
-		<div class="header_page">
-			<div class="container">
-				<h3>约汇吧</h3>
-			</div>
-		</div>
-	</header>
-	<div class="row">
-    <div class="col-md-12">
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3 class="font_white">英领汇</h3>
+    </div>
+</header>
+<div >
         <br>
         <div class="container">
             <h4 style="color: #000;text-align: center">用户注册</h4>
-            <div class="input-group ">
-                <input type="text" class="form-control" placeholder="手机号码">
-                <span class="input-group-addon">发送验证码</span>
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="text" class="form-control" id="code" placeholder="验证码">
-            </div>
             <form action=" " method="get" name="register">
                 <div class="form-group">
                     <input type="text" class="form-control" id="username" placeholder="用户名">
@@ -38,15 +27,21 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="password" placeholder="密码">
                 </div>
-
+                <div class="input-group ">
+                    <input type="text" class="form-control" placeholder="手机号码">
+                    <span class="input-group-addon">发送验证码</span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="code" placeholder="验证码">
+                </div>
                 <button type="submit" class="btn btn-info">提交</button>
-
             </form>
         </div>
     </div>
 
 
-</div>
+
 
 </body>
 </html>

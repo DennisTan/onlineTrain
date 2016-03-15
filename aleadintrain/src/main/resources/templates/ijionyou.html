@@ -1,14 +1,90 @@
-<div>
-	      <header class="header bg_header">
-	        <div class="header_page">
-	          <div class="container">
-	              <h3 align = "center" ng-bind-template="{{data.pageTitle}}"></h3>
-	          </div>
-	        </div>
-	      </header>
-</div> 
-<div class="container-fluid">
-      <div class="row">
-         <img class="img-responsive center-block" src="/img/buildingsite.jpg"></img>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <title>英领汇</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datebar.css" rel="stylesheet">
+    <link rel="Aleadin icon" href="images/icon-title.png">
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="navbar-default navbar-static-top">
+        <h3  class="font_white">我要入汇</h3>
+    </div>
+</header>
+<div class="container">
+
+    <div class="introduce">
+        <p class="font_12">
+            英领汇”是由广州市艾英领企业管理咨询有限公司，倾力打造的企业家、创业成功人士、企业高管等高端人士聚会与分享的平台。
+        </p>
+    </div>
+
 </div>
+
+    <br>
+    <div class="container">
+        <form action=" " method="get" name="register">
+            <ul class="list-group">
+                <li class="border">
+                    <p class="font_list">账号：
+                        <input type="tel" class="ipt_list" placeholder="请输入手机号">
+                    </p>
+                </li>
+                <li class="border">
+                    <p class="font_list">密码：
+                        <input type="password" class="ipt_list" placeholder="6-10位数字或字母">
+                    </p>
+                </li>
+
+                <li class="border">
+                    <p class="font_list">重复密码：
+                        <input type="password" class="ipt_list" placeholder="重新输入密码">
+                    </p>
+                </li>
+
+                <li class="border">
+                    <p class="font_list">验证码：
+                        <input type="text" class="ipt_list" style="width: 40%" placeholder="验证码">
+                        <button class="btn-success">获取验证码</button>
+                    </p>
+                </li>
+                <li class="border">
+                    <p class="font_list">真实姓名：
+                        <input type="text" class="ipt_list" placeholder="请输入您的真实名字">
+                    </p>
+                </li>
+                <li class="border">
+                    <p class="font_list">公司：
+                        <input type="text" class="ipt_list" placeholder="您所在公司">
+                    </p>
+                </li>
+                <li class="border">
+                    <p class="font_list">职位：
+                        <input type="text" class="ipt_list" placeholder="您的工作职位">
+                    </p>
+                </li>
+                <li class="border">
+                    <p class="font_list">邮箱：
+                        <input type="text" class="ipt_list" placeholder="您的邮箱地址">
+                    </p>
+                </li>
+            </ul>
+
+            <button type="submit" class="btn btn-info">提交</button>
+            <br>
+            <br>
+
+        </form>
+    </div>
+
+
+
+
+
+</body>
+</html>
