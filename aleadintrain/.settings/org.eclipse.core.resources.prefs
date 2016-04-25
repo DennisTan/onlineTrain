@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/java/com/aleadin/train/dao/mapper=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/resources/templates/accountmgr.html=UTF-8
 encoding//src/main/resources/templates/superstarcourse.html=UTF-8

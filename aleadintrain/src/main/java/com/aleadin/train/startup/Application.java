@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @ComponentScan(basePackages = "com.aleadin.train")
 @EnableAutoConfiguration
-public class Application  extends WebMvcConfigurerAdapter implements ApplicationContextAware{
+public class Application extends WebMvcConfigurerAdapter implements ApplicationContextAware{
 	public static ApplicationContext context;
 	
     public static void main(String[] args) {
@@ -21,6 +21,5 @@ public class Application  extends WebMvcConfigurerAdapter implements Application
 	public void setApplicationContext(ApplicationContext context)
 			throws BeansException {
 		this.context = context;
-		
 	}
 }
