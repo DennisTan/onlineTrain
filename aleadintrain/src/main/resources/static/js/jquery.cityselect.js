@@ -17,14 +17,14 @@ required:必选项
 		if(this.length<1){return;};
 
 		// 默认值
-		settings=$.extend({
-			url:"js/city.min.js",
-			prov:null,
-			city:null,
-			dist:null,
-			nodata:null,
-			required:true
-		},settings);
+//		settings=$.extend({
+//			url:"/js/city.min.js",
+//			prov:null,
+//			city:null,
+//			dist:null,
+//			nodata:null,
+//			required:true
+//		},settings);
 
 		var box_obj=this;
 		var prov_obj=box_obj.find(".prov");
