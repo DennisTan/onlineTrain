@@ -2,25 +2,34 @@ package com.aleadin.train.dao.vo;
 
 public class TutorialTopicSurveyVO 
 {
-	
+	//id
 	private String ID;
 	
+	//导师ID
 	private String teacherID;
 	
+	//话题
 	private String topic;
 	
+	//地址
 	private String address;
 	
+	//导师名字
 	private String realName;
 	
+	//导师简介
 	private String synopsis;
 	
+	//导师头像
 	private String imgPath;
 	
+	//导师的行业
 	private String industry;
 	
+	//公司
 	private String company;
 	
+	//职位
 	private String position;
 
 	
