@@ -171,7 +171,7 @@ public class YLHController {
 	
 	@RequestMapping(value="/ylh/datebar.json/{topicid}")
 	public  @ResponseBody String dateBarTutorialData(@PathVariable String topicid) {
-		String JsonData = service.queryDateBarTutorialData();
+		String JsonData = service.queryDateBarTutorialData(topicid,"test_01");
 		return JsonData;
 	}
 	

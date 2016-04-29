@@ -18,6 +18,7 @@ import com.aleadin.train.dao.vo.ClassSurveyVO;
 import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
 import com.aleadin.train.dao.vo.SlideVO;
+import com.aleadin.train.dao.vo.TutorialTopicDetailVO;
 import com.aleadin.train.dao.vo.TutorialTopicSurveyVO;
 import com.aleadin.train.model.AccountMgrViewData;
 import com.aleadin.train.model.BecomeEliteViewData;
@@ -458,9 +459,32 @@ public String queryMyOrderData() {
 	  return Data;
 }
 
-public String queryDateBarTutorialData() {
+public String queryDateBarTutorialData(String topicId,String stuId) {
 	TutorialTopicDetailViewData viewData = new TutorialTopicDetailViewData();
 	viewData.setPageTitle("约汇导师");
+	Map<String, Object> param = new HashMap<String,Object>();
+	param.put("topicid", topicId);
+	TutorialTopicDetailVO ttdvo = ylhDao.queryTutorialTopicDetail(param);
+	if(ttdvo != null)
+	{
+		viewData.setAddress(ttdvo.getAddress());
+		viewData.setAuthorName(ttdvo.getRealName());
+		viewData.setCompany(ttdvo.getCompany());
+		viewData.setID(ttdvo.getID());
+		viewData.setImgPath(ttdvo.getImgPath());
+		viewData.setIndustry(ttdvo.getIndustry());
+		viewData.setIntroduce(ttdvo.getIntroduce());
+		viewData.setLink("/ylh/datebar/stuflow1/"+ttdvo.getID()+"/"+stuId);
+		viewData.setPosition(ttdvo.getPosition());
+		viewData.setPrice(ttdvo.getPrice());
+		viewData.setResponseTime(ttdvo.getResponseTime());
+		viewData.setSynopsis(ttdvo.getSynopsis());
+		viewData.setTag1(ttdvo.getTag1());
+		viewData.setTag2(ttdvo.getTag2());
+		viewData.setTag3(ttdvo.getTag3());
+		viewData.setTeacherID(ttdvo.getTeacherID());
+		viewData.setTopic(ttdvo.getTopic());
+	}
 	String Data = JSON.toJSONString(viewData);
 	return Data;
 }

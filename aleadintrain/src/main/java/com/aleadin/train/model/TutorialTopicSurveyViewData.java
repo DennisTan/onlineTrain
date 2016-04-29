@@ -2,26 +2,37 @@ package com.aleadin.train.model;
 
 public class TutorialTopicSurveyViewData {
 
+	//话题ID
 	private String ID;
 	
+	//教师ID
 	private String teacherID;
 	
+	//话题
 	private String topic;
 	
+	//教师地址
 	private String address;
 	
+	//真实名字
 	private String authorName;
 	
+	//教师简介
 	private String synopsis;
 	
+	//头像
 	private String imgPath;
 	
+	//行业
 	private String industry;
 	
+	//公司
 	private String company;
 	
+	//职位
 	private String position;
 
+	//链接
 	private String link;
 	
 	public String getID() {

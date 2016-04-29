@@ -8,6 +8,7 @@ import com.aleadin.train.dao.vo.ClassSurveyVO;
 import com.aleadin.train.dao.vo.OfflineClassDetailVO;
 import com.aleadin.train.dao.vo.SlideVO;
 import com.aleadin.train.dao.vo.OfflineClassSurveyVO;
+import com.aleadin.train.dao.vo.TutorialTopicDetailVO;
 import com.aleadin.train.dao.vo.TutorialTopicSurveyVO;
 
 public interface YlhDao {
@@ -72,6 +73,13 @@ public interface YlhDao {
 		 */
 
      List<TutorialTopicSurveyVO> queryTutorialTopicSurvey(Map<String, Object> params);
+     
+     /**
+      * 
+      * @param params
+      * @return
+      */
+     TutorialTopicDetailVO queryTutorialTopicDetail(Map<String, Object> params);
      
 	
 }

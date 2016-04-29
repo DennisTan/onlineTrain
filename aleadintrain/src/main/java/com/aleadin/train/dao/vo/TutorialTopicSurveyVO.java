@@ -2,7 +2,7 @@ package com.aleadin.train.dao.vo;
 
 public class TutorialTopicSurveyVO 
 {
-	//id
+	//话题id
 	private String ID;
 	
 	//导师ID

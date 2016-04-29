@@ -36,7 +36,10 @@
 	</select>
 	
 	<select id="queryTutorialTopicSurvey" resultType="TutorialTopicSurveyVO">
-	 select a.ID,a.teacherID,a.topic,a.address,b.realName,b.synopsis,b.imgPath,b.company,b.position from TBL_DATEBAR_TOPIC a, TBL_ACCOUNT b where 1 = 1 and a.teacherID = b.ID order by a.address, a.teacherID
+	 select a.ID,a.teacherID,a.topic,a.address,b.realName,b.synopsis,b.imgPath,b.company,b.position from TBL_DATEBAR_TOPIC a, TBL_ACCOUNT b where 1 = 1 and a.teacherID = b.ID and a.status = 1 order by a.address, a.teacherID
 	</select>
 	
+	<select id="queryTutorialTopicDetail" resultType="TutorialTopicDetailVO">
+	 select a.ID,a.teacherID,a.price,a.responseTime,a.topic,a.introduce,a.address,b.realName,b.synopsis,b.imgPath,b.company,b.position,b.tag1,b.tag2,b.tag3 from TBL_DATEBAR_TOPIC a, TBL_ACCOUNT b where 1 = 1 and a.teacherID = b.ID  and a.status = 1 and a.id = #{topicid} order by a.address, a.teacherID
+	</select>
 </mapper>
