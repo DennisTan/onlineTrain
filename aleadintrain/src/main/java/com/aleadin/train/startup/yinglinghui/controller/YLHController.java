@@ -272,4 +272,17 @@ public class YLHController {
 		String JsonData = service.queryMyOrderData();
 		return JsonData;
 	}
+	
+	@RequestMapping(value="/login.html")
+	public String login()
+	{
+		return "login";
+	}
+	
+	
+	@RequestMapping(value="/login.json")
+	public  @ResponseBody String loginData() {
+		String JsonData = service.queryMyOrderData();
+		return JsonData;
+	}
 }

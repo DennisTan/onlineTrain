@@ -83,6 +83,11 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
               templateUrl: 'my/myorder.html',
               controller: 'MyOrderCtrl',
               controllerAs: 'myorder'
+            })
+            .when('/login', {
+              templateUrl: 'login.html',
+              controller: 'LoginCtrl',
+              controllerAs: 'login'
             });
       
       $locationProvider.html5Mode(true);
@@ -233,4 +238,13 @@ angular.module('aleadin', ['ngRoute', 'ngAnimate'])
     	    $scope.data= data;
     	  });
   }]);
+.controller('LoginCtrl', ['$scope','$http','$route','$routeParams','$location',
+                            function($scope,$http,$route, $routeParams, $location) {
+                              this.$route = $route;
+                              this.$location = $location;
+                              this.$routeParams = $routeParams;
+                              $http.get('/login.json').success(function(data) {
+                            	    $scope.data= data;
+                            	  });
+                          }]);
 })(window.angular);
